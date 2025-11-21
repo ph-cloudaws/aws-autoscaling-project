@@ -112,6 +112,32 @@ This small project demonstrates real infrastructure automation principles:
 
 High availability
 
+## 📸 Screenshots
+
+Here are the step-by-step screenshots used in the walkthrough:
+
+### Launch Template & Security Group
+![asg1](images/asg1.png)
+![asg2](images/asg2.png)
+![asg3](images/asg3.png)
+
+### Auto Scaling Group Creation
+![asg4](images/asg4.png)
+![asg5](images/asg5.png)
+![asg6](images/asg6.png)
+![asg7](images/asg7.png)
+![asg8](images/asg8.png)
+![asg9](images/asg9.png)
+
+### Instance Replacement Demo
+![asg10](images/asg10.png)
+![asg11](images/asg11.png)
+![asg12](images/asg12.png)
+![asg13](images/asg13.png)
+![asg14](images/asg14.png)
+![asg15](images/asg15.png)
+
+
 Self-healing systems
 
 Infrastructure as code (conceptually)
