@@ -1,0 +1,127 @@
+# 🚀 AWS Auto Scaling Project  
+*A hands-on project demonstrating EC2 Launch Templates, Auto Scaling Groups, health checks, and dynamic instance replacement.*
+
+## 📌 Overview  
+This project walks through deploying a simple but production-style Auto Scaling setup on AWS.  
+I created:
+
+- A **Launch Template** (AMI, instance type, security group, user data)  
+- An **Auto Scaling Group** across multiple Availability Zones  
+- Scaling limits (min, desired, max)  
+- A self-healing environment (instances get replaced automatically)  
+- A fully documented workflow with 15 screenshots
+
+The goal was to understand how AWS automatically maintains capacity and replaces unhealthy EC2 instances.
+
+---
+
+## 🎯 What I Built
+
+✔ EC2 Launch Template (Amazon Linux 2023 + Apache installed via user data)  
+✔ Multi-AZ Auto Scaling Group  
+✔ Secure Security Group for web access  
+✔ Scaling limits controlling how many instances run  
+✔ Health checks + automatic instance replacement  
+✔ Tested what happens when an instance stops/dies  
+✔ Full documentation with step-by-step screenshots
+
+---
+
+## 🛠️ Architecture Summary
+
+**Region:** eu-west-2 (London)  
+**AMI:** Amazon Linux 2023 (Kernel 6.1)  
+**Instance Type:** t3.micro  
+**Scaling:**  
+- Min: **1**  
+- Desired: **2**  
+- Max: **3**  
+
+**Network:** Multi-AZ deployment  
+**Security:** HTTP/HTTPS inbound, all outbound allowed  
+
+---
+
+## 📸 Screenshots (Step-by-Step)
+
+### **1. Security Group – Inbound Rules**  
+![](images/asg1.png)
+
+### **2. Launch Template – Summary**  
+![](images/asg2.png)
+
+### **3. ASG – Network Settings (VPC + Subnets)**  
+![](images/asg3.png)
+
+### **4. ASG – Load Balancer Step (Skipped)**  
+![](images/asg4.png)
+
+### **5. ASG – Scaling Limits (Min/Desired/Max)**  
+![](images/asg5.png)
+
+### **6. ASG – Scaling Policy Section**  
+![](images/asg6.png)
+
+### **7. ASG – Tagging**  
+![](images/asg7.png)
+
+### **8. ASG – Final Review Page**  
+![](images/asg8.png)
+
+### **9. ASG – Overview After Creation**  
+![](images/asg9.png)
+
+### **10. EC2 Instances – Two Running**  
+![](images/asg10.png)
+
+### **11. Stopping One Instance to Trigger Scaling**  
+![](images/asg11.png)
+
+### **12. Instance Terminated**  
+![](images/asg12.png)
+
+### **13. ASG Launches New Replacement Instance**  
+![](images/asg13.png)
+
+### **14. New Instance Initializing**  
+![](images/asg14.png)
+
+### **15. Final Instance List – Self-Healing Complete**  
+![](images/asg15.png)
+
+---
+
+## 🧪 Testing Auto Scaling
+
+To prove Auto Scaling works, I manually stopped one EC2 instance.  
+AWS responded by:
+
+1. Detecting the instance as unhealthy  
+2. Terminating it  
+3. Launching a brand-new instance automatically  
+4. Restoring desired capacity  
+
+This shows the environment is **self-healing**, which is how AWS handles server failures in real production systems.
+
+---
+
+## 📚 What I Learned
+
+- How Launch Templates define EC2 configurations  
+- How Auto Scaling Groups maintain capacity  
+- Difference between **Min**, **Desired**, and **Max** capacity  
+- How subnets/AZ distribution improves availability  
+- How security groups control traffic  
+- How AWS replaces unhealthy instances automatically  
+- How to fully document an AWS hands-on project
+
+---
+
+## 🏁 Conclusion
+
+This project recreates a foundational pattern used in real cloud architectures:  
+**high availability + resilience + automatic recovery.**
+
+It’s a great introduction to how AWS scales applications and keeps servers healthy with minimal manual work.
+
+Feel free to explore or extend the project — adding a load balancer or a target tracking policy would be the next natural steps.
